@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <linearGradient id="logoBubbleGrad" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="100%" stop-color="#0052d4" />
+    </linearGradient>
+    <linearGradient id="logoAGrad" x1="20" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00e5ff" />
+      <stop offset="50%" stop-color="#0066ff" />
+      <stop offset="100%" stop-color="#0a2540" />
+    </linearGradient>
+    <linearGradient id="logoBeamGrad" x1="30" y1="40" x2="80" y2="70" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#80f3ff" />
+      <stop offset="100%" stop-color="#0066ff" />
+    </linearGradient>
+  </defs>
+
+  <!-- Chat Bubble Shape -->
+  <path 
+    d="M 18 52 C 18 32 34 18 54 18 C 66 18 76 24 82 33 L 73 39 C 68 32 60 27 50 27 C 36 27 26 37 26 51 C 26 62 33 71 44 74 L 38 85 L 26 80 L 18 84 Z" 
+    fill="url(#logoBubbleGrad)"
+    opacity="0.9"
+  />
+
+  <!-- Stylized Tech 'A' -->
+  <path 
+    d="M 62 16 L 88 78 C 89 80 87 83 84 83 L 72 83 C 70 83 68 82 67 80 L 61 65 L 43 65 L 53 43 L 62 16 Z" 
+    fill="url(#logoAGrad)" 
+  />
+  
+  <path 
+    d="M 62 16 L 38 78 C 37 80 39 83 42 83 L 53 83 L 62 60 L 53 43 Z" 
+    fill="url(#logoBeamGrad)"
+    opacity="0.85"
+  />
+
+  <!-- Crossbar & Nodes -->
+  <path d="M 42 63 L 68 63" stroke="#00e5ff" stroke-width="4" stroke-linecap="round" />
+  <line x1="53" y1="43" x2="62" y2="63" stroke="#80f3ff" stroke-width="3" />
+
+  <!-- Nodes -->
+  <circle cx="62" cy="16" r="4.5" fill="#ffffff" />
+  <circle cx="43" cy="63" r="3.5" fill="#00e5ff" />
+  <circle cx="68" cy="63" r="3.5" fill="#00e5ff" />
+  <circle cx="53" cy="43" r="3" fill="#ffffff" />
+</svg>
