@@ -10,12 +10,20 @@ const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        const user = await handleLogin({ email, password })
-        if (user) {
-            navigate("/", { replace: true })
+        setErrorMessage("")
+        try {
+            const user = await handleLogin({ email, password })
+            if (user) {
+                navigate("/", { replace: true })
+            } else {
+                setErrorMessage("Invalid email or password, or server unreachable.")
+            }
+        } catch (err) {
+            setErrorMessage(err?.response?.data?.message || "Login failed. Please check server logs.")
         }
     }
 
@@ -55,6 +63,12 @@ const Login = () => {
                         <h1 className="form-title">welcome</h1>
                         <p className="form-subtitle">Login in to your account to continue</p>
                     </div>
+
+                    {errorMessage && (
+                        <div style={{ color: "#ff4d4f", backgroundColor: "#fff2f0", border: "1px solid #ffccc7", padding: "8px 12px", borderRadius: "6px", marginBottom: "1rem", fontSize: "0.85rem", textAlign: "center" }}>
+                            {errorMessage}
+                        </div>
+                    )}
 
                     <form onSubmit={handleSubmit} className="auth-form">
                         <div className="input-group">
