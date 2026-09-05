@@ -1,9 +1,7 @@
 import axios from "axios"
 
 
-const baseURL = import.meta.env.VITE_API_URL !== undefined
-    ? import.meta.env.VITE_API_URL
-    : (import.meta.env.PROD ? "" : "http://localhost:3000");
+const baseURL = import.meta.env.VITE_API_URL || "http://localhost:3000";
 
 const api = axios.create({
     baseURL,
@@ -20,7 +18,6 @@ export async function register({username, email, password}){
         return response.data
     } catch(err){
         console.log(err)
-        throw err
     }
 
 }
@@ -36,7 +33,6 @@ export async function login({email,password}){
 
     } catch(err){
         console.log(err)
-        throw err
     }
 }
 
@@ -49,7 +45,6 @@ export async function logout(){
 
     } catch(err){
         console.log(err)
-        throw err
     }
 
 }
@@ -63,7 +58,6 @@ export async function getMe(){
 
     } catch(err){
         console.log(err)
-        throw err
     }
 
 }
