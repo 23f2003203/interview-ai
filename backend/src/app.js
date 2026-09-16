@@ -9,7 +9,10 @@ const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin:"https://interview-ai-gd3j.vercel.app",
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true);
+        return callback(null, origin);
+    },
     credentials: true
 }))
 
